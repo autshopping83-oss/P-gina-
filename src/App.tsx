@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { 
   FileText, 
   TrendingUp, 
@@ -20,6 +21,16 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -131,11 +142,10 @@ const ModuleSection = ({ title, subtitle, features, image, reverse = false }: { 
   </div>
 );
 
-export default function App() {
+const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar />
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-emerald-50 rounded-full blur-3xl opacity-50 -z-10"></div>
@@ -515,6 +525,8 @@ export default function App() {
                 <li>Apoio: <a href="tel:+258840636797" className="hover:text-emerald-600 transition-colors">+258 840 636 797</a></li>
                 <li>WhatsApp: <a href="https://wa.me/258840636794" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">+258 840 636 794</a></li>
                 <li><a href="https://chat.whatsapp.com/HCqTa1jG2cU3sufJww1EPT?mode=gi_t" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Grupo da Comunidade</a></li>
+                <li><Link to="/privacy" className="hover:text-emerald-600 transition-colors">Política de Privacidade</Link></li>
+                <li><Link to="/terms" className="hover:text-emerald-600 transition-colors">Termos de Uso</Link></li>
               </ul>
             </div>
           </div>
@@ -531,5 +543,18 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+};
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
