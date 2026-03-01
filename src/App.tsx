@@ -46,9 +46,14 @@ const Navbar = () => {
           <a href="#features" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Funcionalidades</a>
           <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Como funciona</a>
           <a href="#modules" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Módulos</a>
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95">
-            Começar Agora
-          </button>
+          <a 
+            href="https://biz-flow.cloud" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-95"
+          >
+            Abrir Software
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -69,9 +74,14 @@ const Navbar = () => {
             <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Funcionalidades</a>
             <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Como funciona</a>
             <a href="#modules" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Módulos</a>
-            <button className="bg-emerald-500 text-white px-6 py-3 rounded-xl text-lg font-semibold">
-              Começar Agora
-            </button>
+            <a 
+              href="https://biz-flow.cloud" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-emerald-500 text-white px-6 py-3 rounded-xl text-lg font-semibold text-center"
+            >
+              Abrir Software
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -149,13 +159,23 @@ export default function App() {
               Simplifique a administração da sua empresa. Elimine blocos de papel e planilhas complexas com a plataforma completa para freelancers e microempreendedores.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-200 flex items-center justify-center gap-2 group">
+              <a 
+                href="https://biz-flow.cloud" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-emerald-200 flex items-center justify-center gap-2 group"
+              >
                 Começar Grátis
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="bg-white border-2 border-slate-200 hover:border-emerald-500 px-8 py-4 rounded-2xl text-lg font-bold transition-all flex items-center justify-center gap-2">
-                Ver Demonstração
-              </button>
+              </a>
+              <a 
+                href="https://wa.me/258840636794" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white border-2 border-slate-200 hover:border-emerald-500 px-8 py-4 rounded-2xl text-lg font-bold transition-all flex items-center justify-center gap-2"
+              >
+                Falar no WhatsApp
+              </a>
             </div>
             <div className="flex items-center gap-6 pt-4">
               <div className="flex -space-x-3">
@@ -382,10 +402,15 @@ export default function App() {
                 Acesse o Feed da Comunidade para interagir com outros empreendedores e use o BizFlow Pages para vender seus produtos digitais e gerir pagamentos de forma simples.
               </p>
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-bold text-slate-700">
+                <a 
+                  href="https://chat.whatsapp.com/HCqTa1jG2cU3sufJww1EPT?mode=gi_t" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors"
+                >
                   <Users className="w-4 h-4 text-emerald-500" />
-                  Networking
-                </div>
+                  Entrar na Comunidade
+                </a>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-bold text-slate-700">
                   <Download className="w-4 h-4 text-emerald-500" />
                   E-books & Vendas
@@ -412,12 +437,22 @@ export default function App() {
             Junte-se a milhares de empreendedores que já simplificaram sua gestão com o Biz-flow.cloud.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-2xl shadow-emerald-200">
+            <a 
+              href="https://biz-flow.cloud" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-2xl shadow-emerald-200"
+            >
               Começar Agora Gratuitamente
-            </button>
-            <button className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all">
-              Falar com Consultor
-            </button>
+            </a>
+            <a 
+              href="https://wa.me/258840636794" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all"
+            >
+              Falar no WhatsApp
+            </a>
           </div>
           <p className="text-slate-400 text-sm font-medium">Não é necessário cartão de crédito para começar.</p>
         </div>
@@ -438,13 +473,31 @@ export default function App() {
                 A plataforma definitiva de gestão para quem quer crescer de forma organizada e profissional.
               </p>
               <div className="flex gap-4">
-                {/* Social icons placeholders */}
-                <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors cursor-pointer">
-                  <Globe className="w-5 h-5 text-slate-600" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors cursor-pointer">
+                <a 
+                  href="https://wa.me/258840636794" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors cursor-pointer"
+                  title="WhatsApp"
+                >
+                  <MessageSquare className="w-5 h-5 text-slate-600" />
+                </a>
+                <a 
+                  href="tel:+258840636797" 
+                  className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors cursor-pointer"
+                  title="Telefone de Apoio"
+                >
                   <Smartphone className="w-5 h-5 text-slate-600" />
-                </div>
+                </a>
+                <a 
+                  href="https://biz-flow.cloud" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors cursor-pointer"
+                  title="Website"
+                >
+                  <Globe className="w-5 h-5 text-slate-600" />
+                </a>
               </div>
             </div>
             <div>
@@ -459,10 +512,9 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-6">Suporte</h4>
               <ul className="space-y-4 text-slate-500 text-sm">
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Central de Ajuda</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Documentação</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Privacidade</a></li>
+                <li>Apoio: <a href="tel:+258840636797" className="hover:text-emerald-600 transition-colors">+258 840 636 797</a></li>
+                <li>WhatsApp: <a href="https://wa.me/258840636794" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">+258 840 636 794</a></li>
+                <li><a href="https://chat.whatsapp.com/HCqTa1jG2cU3sufJww1EPT?mode=gi_t" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Grupo da Comunidade</a></li>
               </ul>
             </div>
           </div>
