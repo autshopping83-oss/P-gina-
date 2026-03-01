@@ -635,18 +635,6 @@ const LandingPage = () => {
                 <li><a href="https://chat.whatsapp.com/HCqTa1jG2cU3sufJww1EPT?mode=gi_t" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Grupo da Comunidade</a></li>
                 <li><Link to="/privacy" className="hover:text-emerald-600 transition-colors">Política de Privacidade</Link></li>
                 <li><Link to="/terms" className="hover:text-emerald-600 transition-colors">Termos de Uso</Link></li>
-                <li className="pt-2">
-                  <button 
-                    onClick={() => {
-                      const url = `${window.location.origin}/#/privacy`;
-                      navigator.clipboard.writeText(url);
-                      alert('Link da Política copiado para a Play Store!');
-                    }}
-                    className="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-1 rounded hover:bg-emerald-200 transition-colors font-bold uppercase"
-                  >
-                    Copiar Link para Play Store
-                  </button>
-                </li>
               </ul>
             </div>
           </div>
