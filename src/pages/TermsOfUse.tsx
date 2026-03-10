@@ -18,14 +18,14 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Aceitação dos Termos</h2>
             <p>
-              Ao aceder e utilizar o Biz-flow.cloud, concorda em cumprir e estar vinculado a estes Termos de Uso. Se não concordar com qualquer parte destes termos, não deverá utilizar o serviço.
+              Ao aceder e utilizar o Biz-flow, concorda em cumprir e estar vinculado a estes Termos de Uso. Se não concordar com qualquer parte destes termos, não deverá utilizar o serviço.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Descrição do Serviço</h2>
             <p>
-              O Biz-flow.cloud é uma plataforma de gestão empresarial que oferece ferramentas para emissão de documentos, controlo financeiro e gestão de clientes. O serviço é fornecido "como está" e "conforme disponível".
+              O Biz-flow é uma plataforma de gestão empresarial que oferece ferramentas para emissão de documentos, controlo financeiro e gestão de clientes. O serviço é fornecido "como está" e "conforme disponível".
             </p>
           </section>
 
@@ -50,7 +50,7 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Propriedade Intelectual</h2>
             <p>
-              Todo o conteúdo do Biz-flow.cloud, incluindo software, design, logótipos e textos, é propriedade exclusiva nossa ou dos nossos licenciadores e está protegido por leis de direitos de autor.
+              Todo o conteúdo do Biz-flow, incluindo software, design, logótipos e textos, é propriedade exclusiva nossa ou dos nossos licenciadores e está protegido por leis de direitos de autor.
             </p>
           </section>
 

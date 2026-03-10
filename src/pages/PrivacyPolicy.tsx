@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introdução</h2>
             <p>
-              O Biz-flow.cloud ("nós", "nosso") está comprometido em proteger a sua privacidade. Esta Política de Privacidade explica como recolhemos, utilizamos e protegemos as suas informações quando utiliza o nosso software e website.
+              O Biz-flow ("nós", "nosso") está comprometido em proteger a sua privacidade. Esta Política de Privacidade explica como recolhemos, utilizamos e protegemos as suas informações quando utiliza o nosso software e website.
             </p>
           </section>
 

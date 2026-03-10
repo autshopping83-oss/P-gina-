@@ -25,6 +25,7 @@ import { GoogleGenAI } from "@google/genai";
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
+import BrandAssets from './pages/BrandAssets';
 
 const AIDemoComponent = () => {
   const [input, setInput] = useState('');
@@ -116,7 +117,7 @@ const Navbar = () => {
           <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-200">
             <Zap className="text-white w-6 h-6" />
           </div>
-          <span className="text-xl font-bold font-display tracking-tight">Biz-flow<span className="text-emerald-500">.cloud</span></span>
+          <span className="text-xl font-bold font-display tracking-tight">Biz-flow</span>
         </div>
 
         {/* Desktop Menu */}
@@ -586,7 +587,7 @@ const LandingPage = () => {
                 <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
                   <Zap className="text-white w-5 h-5" />
                 </div>
-                <span className="text-xl font-bold font-display tracking-tight">Biz-flow<span className="text-emerald-500">.cloud</span></span>
+                <span className="text-xl font-bold font-display tracking-tight">Biz-flow</span>
               </div>
               <p className="text-slate-500 max-w-sm">
                 A plataforma definitiva de gestão para quem quer crescer de forma organizada e profissional.
@@ -637,11 +638,12 @@ const LandingPage = () => {
                 <li><Link to="/privacy" className="hover:text-emerald-600 transition-colors">Política de Privacidade</Link></li>
                 <li><Link to="/terms" className="hover:text-emerald-600 transition-colors">Termos de Uso</Link></li>
                 <li><Link to="/delete-account" className="hover:text-red-600 transition-colors font-medium">Eliminar Conta</Link></li>
+                <li><Link to="/brand" className="hover:text-emerald-600 transition-colors">Recursos Play Store</Link></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs font-medium">
-            <p>© 2026 Biz-flow.cloud. Todos os direitos reservados.</p>
+            <p>© 2026 Biz-flow. Todos os direitos reservados.</p>
             <div className="flex gap-8">
               <span>Feito com ❤️ para empreendedores</span>
               <div className="flex items-center gap-1">
@@ -665,6 +667,7 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/brand" element={<BrandAssets />} />
       </Routes>
     </HashRouter>
   );
