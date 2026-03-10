@@ -25,7 +25,6 @@ import { GoogleGenAI } from "@google/genai";
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
-import BrandAssets from './pages/BrandAssets';
 
 const AIDemoComponent = () => {
   const [input, setInput] = useState('');
@@ -638,7 +637,6 @@ const LandingPage = () => {
                 <li><Link to="/privacy" className="hover:text-emerald-600 transition-colors">Política de Privacidade</Link></li>
                 <li><Link to="/terms" className="hover:text-emerald-600 transition-colors">Termos de Uso</Link></li>
                 <li><Link to="/delete-account" className="hover:text-red-600 transition-colors font-medium">Eliminar Conta</Link></li>
-                <li><Link to="/brand" className="hover:text-emerald-600 transition-colors">Recursos Play Store</Link></li>
               </ul>
             </div>
           </div>
@@ -667,7 +665,6 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/delete-account" element={<DeleteAccount />} />
-        <Route path="/brand" element={<BrandAssets />} />
       </Routes>
     </HashRouter>
   );
