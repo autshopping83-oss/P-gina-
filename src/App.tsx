@@ -21,75 +21,9 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { GoogleGenAI } from "@google/genai";
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
-
-const AIDemoComponent = () => {
-  const [input, setInput] = useState('');
-  const [result, setResult] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const generateDescription = async () => {
-    if (!input.trim()) return;
-    setLoading(true);
-    try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `Crie uma descrição comercial curta, profissional e atraente para o seguinte produto ou serviço: ${input}. A descrição deve ser em português e ter no máximo 3 frases.`,
-      });
-      setResult(response.text || 'Não foi possível gerar a descrição.');
-    } catch (error) {
-      console.error(error);
-      setResult('Erro ao conectar com a IA. Por favor, tente novamente.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row gap-4">
-        <input 
-          type="text" 
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ex: Consultoria de RH, Bolo de Chocolate, Design de Logo..."
-          className="flex-1 bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
-        />
-        <button 
-          onClick={generateDescription}
-          disabled={loading}
-          className="bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-700 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2"
-        >
-          {loading ? (
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-          ) : (
-            <>
-              Gerar com IA
-              <Zap className="w-4 h-4" />
-            </>
-          )}
-        </button>
-      </div>
-      
-      <AnimatePresence>
-        {result && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2"
-          >
-            <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Sugestão da IA</div>
-            <p className="text-slate-200 leading-relaxed italic">"{result}"</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -123,7 +57,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Funcionalidades</a>
           <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Como funciona</a>
-          <a href="#ai-demo" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Demo IA</a>
+          <a href="#ai-demo" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Teste o Software</a>
           <a 
             href="https://biz-flow.cloud" 
             target="_blank" 
@@ -151,7 +85,7 @@ const Navbar = () => {
           >
             <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Funcionalidades</a>
             <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Como funciona</a>
-            <a href="#ai-demo" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Demo IA</a>
+            <a href="#ai-demo" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Teste o Software</a>
             <a 
               href="https://biz-flow.cloud" 
               target="_blank" 
@@ -393,19 +327,32 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* AI Demo Section */}
+      {/* Demo Section */}
       <section id="ai-demo" className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-[80px] rounded-full"></div>
             
             <div className="relative z-10 space-y-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold font-display">Experimente nossa IA agora</h2>
-                <p className="text-slate-400">Digite um produto ou serviço e veja como a IA do Biz-flow cria uma descrição profissional.</p>
+              <div className="text-center space-y-6">
+                <h2 className="text-3xl md:text-5xl font-bold font-display">Teste agora sem compromisso</h2>
+                <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+                  Aceda ao modo convidado e experimente a criação de faturas, recibos e orçamentos em segundos. Se gostar, pode criar a sua conta diretamente no software.
+                </p>
               </div>
 
-              <AIDemoComponent />
+              <div className="flex justify-center pt-4">
+                <a 
+                  href="https://biz-flow.cloud/?guest=true" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all shadow-2xl shadow-emerald-500/20 flex items-center justify-center gap-3 group"
+                >
+                  <LayoutDashboard className="w-6 h-6" />
+                  Entrar como Convidado
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
