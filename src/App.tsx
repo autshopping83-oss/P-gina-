@@ -48,9 +48,11 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-200">
-            <Zap className="text-white w-6 h-6" />
-          </div>
+          <img 
+            src="/logo.png" 
+            alt="Biz-flow Logo" 
+            className="w-10 h-10 rounded-xl shadow-lg"
+          />
           <span className="text-xl font-bold font-display tracking-tight">Biz-flow</span>
         </div>
 
