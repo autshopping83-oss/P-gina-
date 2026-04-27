@@ -1,10 +1,16 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white py-20 px-6">
+      <Helmet>
+        <title>Política de Privacidade - Biz-flow</title>
+        <meta name="description" content="Política de privacidade da plataforma Biz-flow. Saiba como coletamos, usamos e protegemos suas informações pessoais." />
+        <link rel="canonical" href="https://biz-flo.cloud/privacy" />
+      </Helmet>
       <div className="max-w-4xl mx-auto">
         <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-10 hover:gap-3 transition-all">
           <ArrowLeft className="w-5 h-5" />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { 
   FileText, 
   TrendingUp, 
@@ -146,6 +147,28 @@ const ModuleSection = ({ title, subtitle, features, image, reverse = false }: { 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900">
+      <Helmet>
+        <title>Biz-flow - Gestão Empresarial Inteligente</title>
+        <meta name="description" content="Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas com tecnologia de ponta." />
+        <meta name="keywords" content="gestão empresarial, software de gestão, produtividade, inteligência artificial, cloud, biz-flo, gestão inteligente" />
+        <meta property="og:title" content="Biz-flow - Gestão Empresarial Inteligente" />
+        <meta property="og:description" content="Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas com tecnologia de ponta." />
+        <meta property="og:url" content="https://biz-flo.cloud" />
+        <meta property="og:image" content="https://biz-flo.cloud/logo.png" />
+        <link rel="canonical" href="https://biz-flo.cloud" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Biz-flow",
+            "url": "https://biz-flo.cloud",
+            "description": "Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas.",
+            "sameAs": [
+              "https://wa.me/258840636794"
+            ]
+          })}
+        </script>
+      </Helmet>
       <Navbar />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -605,14 +628,16 @@ const LandingPage = () => {
 
 export default function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfUse />} />
-        <Route path="/delete-account" element={<DeleteAccount />} />
-      </Routes>
-    </HashRouter>
+    <HelmetProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
+        </Routes>
+      </HashRouter>
+    </HelmetProvider>
   );
 }
