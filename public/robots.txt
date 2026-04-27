@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://biz-flo.cloud/sitemap.xml
+Host: https://biz-flow.cloud

@@ -1,16 +1,17 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 
 const TermsOfUse = () => {
   return (
     <div className="min-h-screen bg-white py-20 px-6">
-      <Helmet>
-        <title>Termos de Uso - Biz-flow</title>
-        <meta name="description" content="Termos de uso da plataforma Biz-flow. Leia os termos e condições para o uso do nosso serviço." />
-        <link rel="canonical" href="https://biz-flo.cloud/terms" />
-      </Helmet>
+      <Seo
+        title="Termos de Uso - Biz-flow"
+        description="Termos de uso da plataforma Biz-flow. Leia os termos e condições para o uso do nosso serviço."
+        canonicalPath="/terms"
+        breadcrumb={[{ name: 'Termos', url: '/terms' }]}
+      />
       <div className="max-w-4xl mx-auto">
         <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-10 hover:gap-3 transition-all">
           <ArrowLeft className="w-5 h-5" />

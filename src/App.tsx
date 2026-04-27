@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { 
   FileText, 
   TrendingUp, 
@@ -19,12 +19,19 @@ import {
   Cloud,
   Signature,
   Download,
-  MessageSquare
+  MessageSquare,
+  ArrowLeft
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import Seo from './components/Seo';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
+import Pricing from './pages/Pricing';
+import Features from './pages/Features';
+import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import AboutUs from './pages/AboutUs';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -58,9 +65,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Funcionalidades</a>
-          <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Como funciona</a>
-          <a href="#ai-demo" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Teste o Software</a>
+          <Link to="/funcionalidades" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Funcionalidades</Link>
+          <Link to="/precos" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Preços</Link>
+          <Link to="/blog" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Blog</Link>
+          <Link to="/contato" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Contato</Link>
+          <Link to="/sobre" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Sobre</Link>
           <a 
             href="https://biz-flow.cloud" 
             target="_blank" 
@@ -86,9 +95,11 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
-            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Funcionalidades</a>
-            <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Como funciona</a>
-            <a href="#ai-demo" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Teste o Software</a>
+            <Link to="/funcionalidades" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Funcionalidades</Link>
+            <Link to="/precos" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Preços</Link>
+            <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Blog</Link>
+            <Link to="/contato" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Contato</Link>
+            <Link to="/sobre" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-600">Sobre</Link>
             <a 
               href="https://biz-flow.cloud" 
               target="_blank" 
@@ -149,28 +160,12 @@ const ModuleSection = ({ title, subtitle, features, image, reverse = false }: { 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900">
-      <Helmet>
-        <title>Biz-flow - Gestão Empresarial Inteligente</title>
-        <meta name="description" content="Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas com tecnologia de ponta." />
-        <meta name="keywords" content="gestão empresarial, software de gestão, produtividade, inteligência artificial, cloud, biz-flo, gestão inteligente" />
-        <meta property="og:title" content="Biz-flow - Gestão Empresarial Inteligente" />
-        <meta property="og:description" content="Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas com tecnologia de ponta." />
-        <meta property="og:url" content="https://biz-flo.cloud" />
-        <meta property="og:image" content="https://biz-flo.cloud/logo.png" />
-        <link rel="canonical" href="https://biz-flo.cloud" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Biz-flow",
-            "url": "https://biz-flo.cloud",
-            "description": "Plataforma de gestão empresarial inteligente para otimizar processos, aumentar produtividade e tomar decisões estratégicas.",
-            "sameAs": [
-              "https://wa.me/258840636794"
-            ]
-          })}
-        </script>
-      </Helmet>
+      <Seo
+        title="Biz-flow | Gestão Financeira e Emissão de Facturas"
+        description="Plataforma de gestão financeira para simplificar faturação, fluxo de caixa e decisões estratégicas para negócios em Moçambique."
+        canonicalPath="/"
+        breadcrumb={[]}
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -594,10 +589,10 @@ const LandingPage = () => {
             <div>
               <h4 className="font-bold mb-6">Produto</h4>
               <ul className="space-y-4 text-slate-500 text-sm">
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Funcionalidades</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Preços</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">BizFlow Pages</a></li>
-                <li><a href="#" className="hover:text-emerald-600 transition-colors">Comunidade</a></li>
+                <li><Link to="/funcionalidades" className="hover:text-emerald-600 transition-colors">Funcionalidades</Link></li>
+                <li><Link to="/precos" className="hover:text-emerald-600 transition-colors">Preços</Link></li>
+                <li><Link to="/blog" className="hover:text-emerald-600 transition-colors">Blog</Link></li>
+                <li><Link to="/sobre" className="hover:text-emerald-600 transition-colors">Sobre</Link></li>
               </ul>
             </div>
             <div>
@@ -631,15 +626,20 @@ const LandingPage = () => {
 export default function App() {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/funcionalidades" element={<Features />} />
+          <Route path="/precos" element={<Pricing />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contato" element={<Contact />} />
+          <Route path="/sobre" element={<AboutUs />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }

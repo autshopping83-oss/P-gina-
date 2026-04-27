@@ -1,16 +1,17 @@
 import React from 'react';
 import { ArrowLeft, Trash2, MessageSquare, Smartphone, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 
 const DeleteAccount = () => {
   return (
     <div className="min-h-screen bg-white py-20 px-6">
-      <Helmet>
-        <title>Eliminar Conta - Biz-flow</title>
-        <meta name="description" content="Página para eliminar sua conta na plataforma Biz-flow. Siga os passos para remover permanentemente sua conta e dados." />
-        <link rel="canonical" href="https://biz-flo.cloud/delete-account" />
-      </Helmet>
+      <Seo
+        title="Eliminar Conta - Biz-flow"
+        description="Página para eliminar sua conta na plataforma Biz-flow. Siga os passos para remover permanentemente sua conta e dados."
+        canonicalPath="/delete-account"
+        breadcrumb={[{ name: 'Eliminar Conta', url: '/delete-account' }]}
+      />
       <div className="max-w-4xl mx-auto">
         <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-10 hover:gap-3 transition-all">
           <ArrowLeft className="w-5 h-5" />
