@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const AnimatedPhone = () => {
-  const [currentLayer, setCurrentLayer] = React.useState(0);
+const AnimatedPhone: React.FC = () => {
+  const [currentLayer, setCurrentLayer] = React.useState<number>(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -12,7 +12,7 @@ const AnimatedPhone = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const layers = [
+  const layers: React.ReactElement[] = [
     // Layer 1: Payment Notification
     <motion.div
       key="payment"
