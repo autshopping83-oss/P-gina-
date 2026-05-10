@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-p    "dev": "tsx server.ts",
+  "scripts": {
+    "dev": "tsx server.ts",
     "start": "node server.ts",
     "build": "vite build",
     "preview": "vite preview",

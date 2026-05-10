@@ -14,7 +14,7 @@ const features = [
 
 const Features = () => {
   return (
-    <div className="min-h-screen bg-slate-50 py-20 px-6">
+    <div className="min-h-screen bg-[#F5F7FA] py-20 px-6">
       <Seo
         title="Funcionalidades | Biz-flow"
         description="Conheça as funcionalidades do Biz-flow: emissão de documentos, gestão financeira, relatórios, multi-moeda e muito mais."
@@ -23,24 +23,24 @@ const Features = () => {
       />
 
       <div className="max-w-6xl mx-auto">
-        <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-10 hover:gap-3 transition-all">
+        <Link to="/" className="inline-flex items-center gap-2 text-[#0D47A1] font-bold mb-10 hover:gap-3 transition-all">
           <ArrowLeft className="w-5 h-5" /> Voltar para o Início
         </Link>
 
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-[0.4em] text-emerald-600 font-bold">Funcionalidades</p>
+          <p className="text-sm uppercase tracking-[0.4em] text-[#0D47A1] font-bold">Funcionalidades</p>
           <h1 className="text-5xl md:text-6xl font-bold font-display mt-4">Tudo o que a sua empresa precisa para operar com confiança.</h1>
-          <p className="text-slate-600 text-lg mt-4 max-w-2xl mx-auto">Funcionalidades desenhadas para simplificar o dia a dia administrativo e melhorar os resultados do seu negócio.</p>
+          <p className="text-[#6B7280] text-lg mt-4 max-w-2xl mx-auto">Funcionalidades desenhadas para simplificar o dia a dia administrativo e melhorar os resultados do seu negócio.</p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
           {features.map((feature) => (
-            <div key={feature.title} className="rounded-[2rem] bg-white p-10 shadow-sm border border-slate-200 group hover:shadow-xl transition-all">
-              <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-emerald-50 text-emerald-600 mb-6">
+            <div key={feature.title} className="rounded-[2rem] bg-white p-10 shadow-sm border border-[#E5E7EB] group hover:shadow-xl transition-all">
+              <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-[#E1F5FE] text-[#0D47A1] mb-6">
                 <feature.icon className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-bold mb-4">{feature.title}</h2>
-              <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              <p className="text-[#6B7280] leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://biz-flow.cloud';
 const SITE_NAME = 'Biz-flow';
-const DEFAULT_IMAGE = 'https://biz-flow.cloud/logo.png';
+const DEFAULT_IMAGE = 'https://biz-flow.cloud/logo.svg';
 
 export interface BreadcrumbItem {
   name: string;
@@ -22,7 +22,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   sameAs: [
     'https://youtube.com/@biz-flow-cloud',
     'https://www.facebook.com/share/1CJt9QpQtN/',

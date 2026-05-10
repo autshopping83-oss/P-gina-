@@ -14,17 +14,17 @@ const AboutUs = () => {
       />
 
       <div className="max-w-6xl mx-auto">
-        <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-10 hover:gap-3 transition-all">
+        <Link to="/" className="inline-flex items-center gap-2 text-[#0D47A1] font-bold mb-10 hover:gap-3 transition-all">
           <ArrowLeft className="w-5 h-5" /> Voltar para o Início
         </Link>
 
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1fr] items-start">
           <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-emerald-600 font-bold">Sobre Nós</p>
+            <p className="text-sm uppercase tracking-[0.4em] text-[#0D47A1] font-bold">Sobre Nós</p>
             <h1 className="text-5xl md:text-6xl font-bold font-display mt-4">Transformando a gestão financeira de negócios moçambicanos.</h1>
-            <p className="text-slate-600 text-lg mt-4 max-w-2xl">O Biz-flow nasceu para ajudar microempresas, pequenos negócios e freelancers a abandonar o papel e gerir receitas, despesas e documentos fiscais de forma profissional.</p>
+            <p className="text-[#6B7280] text-lg mt-4 max-w-2xl">O Biz-flow nasceu para ajudar microempresas, pequenos negócios e freelancers a abandonar o papel e gerir receitas, despesas e documentos fiscais de forma profissional.</p>
 
-            <div className="mt-12 space-y-8 text-slate-700 leading-relaxed">
+            <div className="mt-12 space-y-8 text-[#374151] leading-relaxed">
               <section>
                 <h2 className="text-2xl font-bold mb-4">Nossa missão</h2>
                 <p>
@@ -49,26 +49,26 @@ const AboutUs = () => {
           </div>
 
           <div className="space-y-8">
-            <div className="rounded-[2rem] bg-emerald-50 p-10 shadow-sm border border-emerald-100">
-              <div className="flex items-center gap-4 text-emerald-600 mb-4">
+            <div className="rounded-[2rem] bg-[#E1F5FE] p-10 shadow-sm border border-[#BBDEFB]">
+              <div className="flex items-center gap-4 text-[#0D47A1] mb-4">
                 <Users className="w-6 h-6" />
-                <span className="font-bold text-slate-900">Equipa local</span>
+                <span className="font-bold text-[#1F2937]">Equipa local</span>
               </div>
-              <p className="text-slate-700">Equipa de produto e suporte em Maputo preparada para responder a necessidades reais do mercado.</p>
+              <p className="text-[#374151]">Equipa de produto e suporte em Maputo preparada para responder a necessidades reais do mercado.</p>
             </div>
-            <div className="rounded-[2rem] bg-slate-50 p-10 shadow-sm border border-slate-200">
-              <div className="flex items-center gap-4 text-emerald-600 mb-4">
+            <div className="rounded-[2rem] bg-[#F5F7FA] p-10 shadow-sm border border-[#E5E7EB]">
+              <div className="flex items-center gap-4 text-[#0D47A1] mb-4">
                 <ShieldCheck className="w-6 h-6" />
-                <span className="font-bold text-slate-900">Segurança</span>
+                <span className="font-bold text-[#1F2937]">Segurança</span>
               </div>
-              <p className="text-slate-700">Dados protegidos com boas práticas de segurança e apenas processados quando necessários para o funcionamento do serviço.</p>
+              <p className="text-[#374151]">Dados protegidos com boas práticas de segurança e apenas processados quando necessários para o funcionamento do serviço.</p>
             </div>
-            <div className="rounded-[2rem] bg-white p-10 shadow-sm border border-slate-200">
-              <div className="flex items-center gap-4 text-emerald-600 mb-4">
+            <div className="rounded-[2rem] bg-white p-10 shadow-sm border border-[#E5E7EB]">
+              <div className="flex items-center gap-4 text-[#0D47A1] mb-4">
                 <Globe className="w-6 h-6" />
-                <span className="font-bold text-slate-900">Presença digital</span>
+                <span className="font-bold text-[#1F2937]">Presença digital</span>
               </div>
-              <p className="text-slate-700">Marca construída com consistência online: site, LinkedIn, YouTube e Facebook alinhados para reforçar a autoridade da Biz-flow.</p>
+              <p className="text-[#374151]">Marca construída com consistência online: site, LinkedIn, YouTube e Facebook alinhados para reforçar a autoridade da Biz-flow.</p>
             </div>
           </div>
         </div>
