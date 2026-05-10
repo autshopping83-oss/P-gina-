@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Seo from './components/Seo';
+import AnimatedPhone from './components/AnimatedPhone';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
@@ -168,9 +169,9 @@ const LandingPage = () => {
       />
       <Navbar />
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-[#E1F5FE] rounded-full blur-3xl opacity-50 -z-10"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-[#E1F5FE] rounded-full blur-3xl opacity-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-br from-white via-white to-cyan-50/30">
+        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/20 to-blue-100/20 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-blue-50/30 to-cyan-50/20 rounded-full blur-3xl -z-10"></div>
         
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
@@ -226,57 +227,7 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative z-10 bg-white rounded-[2.5rem] shadow-2xl border border-[#E5E7EB] overflow-hidden">
-              <div className="bg-[#0F172A] p-4 flex items-center justify-between">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <div className="text-xs text-[#9CA3AF] font-mono">biz-flow.cloud/dashboard</div>
-                <div className="w-6"></div>
-              </div>
-              <img 
-                src="https://picsum.photos/seed/dashboard/1200/800" 
-                alt="Dashboard Preview" 
-                className="w-full aspect-[4/3] object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            {/* Floating Elements */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-[#E5E7EB] flex items-center gap-3"
-            >
-              <div className="w-10 h-10 bg-[#D0F1FF] rounded-full flex items-center justify-center">
-                <TrendingUp className="text-[#0D47A1] w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[10px] text-[#6B7280] font-bold uppercase tracking-wider">Receita Mensal</div>
-                <div className="text-lg font-bold text-[#1F2937]">+45.200 MZN</div>
-              </div>
-            </motion.div>
-            <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-[#E5E7EB] flex items-center gap-3"
-            >
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                <FileText className="text-blue-600 w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[10px] text-[#6B7280] font-bold uppercase tracking-wider">Nova Fatura</div>
-                <div className="text-sm font-bold text-[#1F2937]">Emitida com sucesso</div>
-              </div>
-            </motion.div>
-          </motion.div>
+          <AnimatedPhone />
         </div>
       </section>
 

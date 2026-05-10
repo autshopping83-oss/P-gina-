@@ -26,6 +26,6 @@
   @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1A73E8] to-[#00BCD4];
+.perspective-1000 {
+  perspective: 1000px;
 }
