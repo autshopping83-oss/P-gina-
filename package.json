@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/copy-assets.mjs",
     "dev": "vite",
     "start": "vite preview",
+    "prebuild": "node scripts/copy-assets.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",

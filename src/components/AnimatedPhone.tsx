@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import delivery from '../assets/auto_crop#TUFITGJCLXA5YmsjMSMzMmNiMWVlMDI2YjFiMmNmZTNjOWMzY2UwMGZkZDZmMSMxM_20260602_143533_0000.png';
-import office from '../assets/auto_crop#TUFITGJHd214U3cjMSMzMmNiMWVlMDI2YjFiMmNmZTNjOWMzY2UwMGZkZDZmMSMxM_20260602_143522_0000.png';
-import flow from '../assets/auto_crop#TUFITGJPRjZhOWsjMSNlNmJjM2I4YmQxMTNlNTQ0MGRjMDZhZTUzZDFjNDM2YyMxM_20260602_143546_0000.png';
 
 const AnimatedPhone: React.FC = () => {
-  const images = [delivery, office, flow];
+  const images = ['/dist/delivery.png', '/dist/office.png', '/dist/flow.png'];
   const [current, setCurrent] = useState<number>(0);
   const [imgError, setImgError] = useState<boolean>(false);
 
