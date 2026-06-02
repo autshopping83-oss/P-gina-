@@ -559,7 +559,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="pt-8 border-t border-[#E5E7EB] flex flex-col md:flex-row justify-between items-center gap-4 text-[#9CA3AF] text-xs font-medium">
-            <p>© 2026 Biz-flow. Todos os direitos reservados.</p>
+            <p>© {new Date().getFullYear()} Biz-flow. Todos os direitos reservados.</p>
             <div className="flex gap-8">
               <span>Feito com ❤️ para empreendedores</span>
               <div className="flex items-center gap-1">
