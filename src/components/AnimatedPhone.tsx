@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import delivery from '../assets/delivery.svg';
+import office from '../assets/office.svg';
+import flow from '../assets/flow.svg';
 
 const AnimatedPhone: React.FC = () => {
-  const images = ['/dist/delivery.svg', '/dist/office.svg', '/dist/flow.svg'];
+  const images = [delivery, office, flow];
   const [current, setCurrent] = useState<number>(0);
   const [imgError, setImgError] = useState<boolean>(false);
 
