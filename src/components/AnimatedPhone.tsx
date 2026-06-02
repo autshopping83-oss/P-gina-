@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import delivery from '../assets/delivery.svg';
-import office from '../assets/office.svg';
-import flow from '../assets/flow.svg';
+import delivery from '../assets/auto_crop#TUFITGJCLXA5YmsjMSMzMmNiMWVlMDI2YjFiMmNmZTNjOWMzY2UwMGZkZDZmMSMxM_20260602_143533_0000.png';
+import office from '../assets/auto_crop#TUFITGJHd214U3cjMSMzMmNiMWVlMDI2YjFiMmNmZTNjOWMzY2UwMGZkZDZmMSMxM_20260602_143522_0000.png';
+import flow from '../assets/auto_crop#TUFITGJPRjZhOWsjMSNlNmJjM2I4YmQxMTNlNTQ0MGRjMDZhZTUzZDFjNDM2YyMxM_20260602_143546_0000.png';
 
 const AnimatedPhone: React.FC = () => {
   const images = [delivery, office, flow];
