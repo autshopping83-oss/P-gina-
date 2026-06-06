@@ -436,7 +436,7 @@ const LandingPage = () => {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold font-display">Muito mais que um gestor. Uma comunidade.</h2>
               <p className="text-lg text-[#6B7280]">
-                Acesse o Feed da Comunidade para interagir com outros empreendedores e use o BizFlow Pages para vender seus produtos digitais e gerir pagamentos de forma simples.
+                Acesse o Feed da Comunidade para interagir com outros empreendedores e trocar experiências sobre gestão de negócios.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
@@ -448,10 +448,7 @@ const LandingPage = () => {
                   <Users className="w-4 h-4 text-[#1A73E8]" />
                   Entrar na Comunidade
                 </a>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-bold text-[#374151]">
-                  <Download className="w-4 h-4 text-[#1A73E8]" />
-                  E-books & Vendas
-                </div>
+
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-sm font-bold text-[#374151]">
                   <ShieldCheck className="w-4 h-4 text-[#1A73E8]" />
                   Segurança Supabase
