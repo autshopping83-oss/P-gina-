@@ -8,7 +8,7 @@ const Pricing = () => {
     <div className="min-h-screen bg-white py-20 px-6">
       <Seo
         title="Planos e Preços | Gestão Financeira Biz-flow"
-        description="Compare os planos do Biz-flow e escolha a solução ideal para gerir faturação, fluxo de caixa e vendas digitais."
+        description="Planos a partir de 250 MT/mês. Comece grátis e evolua para o plano ideal para o seu negócio em Moçambique."
         canonicalPath="/precos"
         breadcrumb={[{ name: 'Preços', url: '/precos' }]}
       />
@@ -34,13 +34,13 @@ const Pricing = () => {
             },
             {
               name: 'Pro',
-              price: '200 MT / 3 USD por mês',
-              features: ['Todas as do Starter', 'Gestão de clientes', 'Relatórios avançados', 'Multi-moeda'],
+              price: '250 MT/mês',
+              features: ['Todas as do Starter', 'Gestão de clientes', 'Relatórios avançados', 'Multi-moeda', 'Suporte prioritário WhatsApp'],
               highlight: true,
             },
             {
               name: 'Empresarial',
-              price: '400 MT / 6 USD por mês',
+              price: '500 MT/mês',
               features: ['Todas as do Pro', 'Contabilidade simplificada', 'Acesso para equipa', 'Suporte prioritário'],
               highlight: false,
             },
