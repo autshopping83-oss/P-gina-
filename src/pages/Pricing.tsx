@@ -67,12 +67,12 @@ const Pricing = () => {
                 ))}
               </ul>
               <a
-                href="https://wa.me/258840636794"
+                href="https://biz-flow.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center justify-center w-full rounded-3xl px-6 py-4 text-sm font-bold transition-all ${plan.highlight ? 'bg-[#0D47A1] text-white hover:bg-[#0B3A85]' : 'bg-[#0F172A] text-white hover:bg-[#0B3A85]'}`}
               >
-                Falar com um especialista
+                {plan.price === 'Grátis' ? 'Começar Grátis' : 'Assinar Agora'}
               </a>
             </div>
           ))}
