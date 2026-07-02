@@ -6,19 +6,47 @@
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --color-primary: #1A73E8;
   --color-primary-dark: #0D47A1;
-  --color-highlight: #00BCD4;
+  --color-accent: #00BCD4;
   --color-surface: #F5F7FA;
+  --color-surface-alt: #FFFFFF;
+  --color-surface-strong: #0F172A;
   --color-text: #1F2937;
   --color-muted: #6B7280;
+  --color-inverse: #0F172A;
+  --color-inverse-dark: #0B3A85;
+  --color-inverse-muted: #9CA3AF;
+  --color-border: #E5E7EB;
 }
 
 @layer base {
   body {
-    @apply font-sans text-[#1F2937] bg-white;
+    @apply font-sans text-[var(--color-text)] bg-[var(--color-surface)];
   }
   
   h1, h2, h3, h4 {
     @apply font-display;
+  }
+
+  a {
+    color: var(--color-primary);
+    transition: color 180ms ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--color-primary-dark);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
   }
 }
 
