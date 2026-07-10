@@ -892,9 +892,7 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2 space-y-6">
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[var(--color-accent)] rounded-xl flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
+                <img src="/logo.svg" alt="Biz-flow" className="w-10 h-10" />
                 <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>Biz-flow</span>
               </Link>
               <p className="text-white/50 max-w-sm leading-relaxed">
