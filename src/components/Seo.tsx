@@ -27,6 +27,7 @@ const organizationSchema = {
     'https://youtube.com/@biz-flow-cloud',
     'https://www.facebook.com/share/1CJt9QpQtN/',
     'https://www.linkedin.com/in/biz-flow-60457b398',
+    'https://www.instagram.com/bizflow.cloud',
   ],
   contactPoint: [
     {
