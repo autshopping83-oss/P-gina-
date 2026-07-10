@@ -25,11 +25,14 @@ import {
   Wallet,
   Shield,
   Clock,
-  Star
+  Star,
+  Mail,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Seo from './components/Seo';
 import AnimatedPhone from './components/AnimatedPhone';
+import { TrackedLink } from './components/TrackedLink';
+import { NewsletterForm } from './components/NewsletterForm';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import DeleteAccount from './pages/DeleteAccount';
@@ -89,15 +92,17 @@ const Navbar = () => {
 
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          <a
+          <TrackedLink
             href="https://biz-flow.cloud"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-sm"
+            eventName="cta_click"
+            metadata={{ location: 'navbar' }}
           >
             Começar Grátis
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </TrackedLink>
         </div>
 
         {/* Mobile Toggle */}
@@ -125,15 +130,17 @@ const Navbar = () => {
               <MobileNavLink href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</MobileNavLink>
               <MobileNavLink href="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre</MobileNavLink>
               <MobileNavLink href="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
-              <a
+              <TrackedLink
                 href="https://biz-flow.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary justify-center mt-4"
+                eventName="cta_click"
+                metadata={{ location: 'mobile_menu' }}
               >
                 Começar Grátis
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </TrackedLink>
             </div>
           </motion.div>
         )}
@@ -268,24 +275,28 @@ const LandingPage = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <TrackedLink
                 href="https://biz-flow.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg"
+                eventName="cta_click"
+                metadata={{ location: 'hero' }}
               >
                 Começar grátis sem cartão
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href="https://wa.me/258840636794"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-lg"
+                eventName="whatsapp_click"
+                metadata={{ location: 'hero' }}
               >
                 <MessageSquare className="w-5 h-5" />
                 Falar com a equipe
-              </a>
+              </TrackedLink>
             </div>
 
             {/* Social Proof */}
@@ -690,24 +701,35 @@ const LandingPage = () => {
               Junte-se a milhares de empreendedores que já simplificaram a sua gestão com o Biz-flow.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
+              <TrackedLink
                 href="https://biz-flow.cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg"
+                eventName="cta_click"
+                metadata={{ location: 'cta_section' }}
               >
                 Começar Agora Gratuitamente
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href="https://wa.me/258840636794"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-lg"
+                eventName="whatsapp_click"
+                metadata={{ location: 'cta_section' }}
               >
                 <MessageSquare className="w-5 h-5" />
                 Falar no WhatsApp
-              </a>
+              </TrackedLink>
+            </div>
+            <div className="pt-6 border-t border-slate-200 max-w-md mx-auto">
+              <p className="text-sm text-[var(--color-muted)] font-medium mb-4">
+                <Mail className="w-4 h-4 inline mr-1" />
+                Receba dicas de gestão no seu email
+              </p>
+              <NewsletterForm />
             </div>
             <p className="text-sm text-[var(--color-muted)] font-medium">
               Não é necessário cartão de crédito para começar.

@@ -1,9 +1,13 @@
-import React from 'react';
+// src/pages/Contact.tsx
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { ArrowLeft, MapPin, Phone, Mail, MessageSquare } from 'lucide-react';
 import Seo from '../components/Seo';
+import { ContactForm } from '../components/ContactForm';
 
 const Contact = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="min-h-screen bg-white py-20 px-6">
       <Seo
@@ -18,7 +22,7 @@ const Contact = () => {
           <ArrowLeft className="w-5 h-5" /> Voltar para o Início
         </Link>
 
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-start">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-start mb-16">
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-[#0D47A1] font-bold">Contato</p>
             <h1 className="text-5xl md:text-6xl font-bold font-display mt-4">Precisa de ajuda para crescer com Biz-flow?</h1>
@@ -27,7 +31,7 @@ const Contact = () => {
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               <a href="https://wa.me/258840636794" target="_blank" rel="noopener noreferrer" className="rounded-[2rem] border border-[#E5E7EB] p-8 hover:border-[#1A73E8] transition-all bg-[#F5F7FA]">
                 <div className="flex items-center gap-4 mb-4 text-[#0D47A1]">
-                  <Phone className="w-6 h-6" />
+                  <MessageSquare className="w-6 h-6" />
                   <span className="font-bold">WhatsApp</span>
                 </div>
                 <p className="text-[#374151]">+258 840 636 794</p>
@@ -66,6 +70,16 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-sm uppercase tracking-[0.4em] text-[#0D47A1] font-bold">Formulário</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-display mt-4">Envie-nos uma mensagem</h2>
+            <p className="text-[#6B7280] mt-2">Respondemos em até 24 horas úteis.</p>
+          </div>
+          <ContactForm />
         </div>
       </div>
     </div>
