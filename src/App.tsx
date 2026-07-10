@@ -42,6 +42,7 @@ import Features from './pages/Features';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import AboutUs from './pages/AboutUs';
+import { DemoEditor } from './pages/DemoEditor';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -74,10 +75,8 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-[var(--color-primary)] rounded-xl flex items-center justify-center shadow-lg shadow-[var(--color-primary)/20] group-hover:shadow-[var(--color-primary)/30] transition-shadow">
-            <Zap className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          <img src="/logo.svg" alt="Biz-flow" className="w-10 h-10" />
+          <span className="text-xl font-bold tracking-tight text-[var(--color-ink)]" style={{ fontFamily: 'var(--font-display)' }}>
             Biz-flow
           </span>
         </Link>
@@ -89,6 +88,7 @@ const Navbar = () => {
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/sobre">Sobre</NavLink>
           <NavLink href="/contato">Contato</NavLink>
+          <NavLink href="/testar">Testar Grátis</NavLink>
         </div>
 
         {/* CTA */}
@@ -131,6 +131,7 @@ const Navbar = () => {
               <MobileNavLink href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</MobileNavLink>
               <MobileNavLink href="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre</MobileNavLink>
               <MobileNavLink href="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
+              <MobileNavLink href="/testar" onClick={() => setMobileMenuOpen(false)}>Testar Grátis</MobileNavLink>
               <TrackedLink
                 href="https://biz-flow.cloud"
                 target="_blank"
@@ -256,14 +257,14 @@ const LandingPage = () => {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)]">
               <span className="w-2 h-2 rounded-full bg-[var(--color-success)] animate-pulse" />
-              <span className="text-sm font-medium text-[var(--color-muted)]">Gestão financeira simplificada</span>
+              <span className="text-sm font-medium text-[var(--color-muted)]">Plataforma de gestão para Moçambique</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight" style={{ fontFamily: 'var(--color-primary)' }}>
-              Facturação e gestão financeira{' '}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+              Facturação e controlo financeiro{' '}
               <span className="relative inline-block">
-                <span className="relative z-10">sem complicação</span>
+                <span className="relative z-10">para o seu negócio</span>
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-[var(--color-accent)]/20 -z-0" />
               </span>
               .
@@ -271,20 +272,18 @@ const LandingPage = () => {
 
             {/* Subheadline */}
             <p className="text-xl text-[var(--color-muted)] leading-relaxed max-w-lg">
-              Emita facturas profissionais, controle o fluxo de caixa e envie documentos pelo WhatsApp — tudo numa plataforma feita para empreendedores moçambicanos.
+              Emita facturas profissionais, controle o fluxo de caixa e envie documentos pelo WhatsApp. Uma plataforma completa para empreendedores moçambicanos.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <TrackedLink
-                href="https://biz-flow.cloud"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-lg"
+                href="/testar"
+                className="btn-accent text-lg"
                 eventName="cta_click"
-                metadata={{ location: 'hero' }}
+                metadata={{ location: 'hero_testar' }}
               >
-                Começar grátis sem cartão
+                Testar Grátis
                 <ArrowRight className="w-5 h-5" />
               </TrackedLink>
               <TrackedLink
@@ -339,13 +338,37 @@ const LandingPage = () => {
       </section>
 
       {/* ─── Trust Bar ─────────────────────────────────────────────────────── */}
-      <section className="py-12 border-y border-[var(--color-border)] bg-[var(--color-surface)]">
+      <section className="py-12 bg-gradient-to-r from-[var(--color-primary)]/5 via-[var(--color-surface)] to-[var(--color-primary)]/5 border-y border-[var(--color-border)]">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatBlock value="2.000+" label="Utilizadores" />
-            <StatBlock value="50.000+" label="Facturas emitidas" />
-            <StatBlock value="99.9%" label="Uptime" />
-            <StatBlock value="4.8/5" label="Avaliação" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-1" style={{ fontFamily: 'var(--font-mono)' }}>2.000+</div>
+              <div className="flex items-center justify-center gap-1 mb-1">
+                <Users className="w-4 h-4 text-[var(--color-muted)]" />
+                <span className="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Utilizadores</span>
+              </div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-1" style={{ fontFamily: 'var(--font-mono)' }}>50.000+</div>
+              <div className="flex items-center justify-center gap-1 mb-1">
+                <FileText className="w-4 h-4 text-[var(--color-muted)]" />
+                <span className="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Facturas</span>
+              </div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-1" style={{ fontFamily: 'var(--font-mono)' }}>99.9%</div>
+              <div className="flex items-center justify-center gap-1 mb-1">
+                <Shield className="w-4 h-4 text-[var(--color-muted)]" />
+                <span className="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Uptime</span>
+              </div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/30 transition-all">
+              <div className="text-3xl md:text-4xl font-bold text-[var(--color-accent)] mb-1" style={{ fontFamily: 'var(--font-mono)' }}>4.8/5</div>
+              <div className="flex items-center justify-center gap-1 mb-1">
+                <Star className="w-4 h-4 text-[var(--color-accent)]" />
+                <span className="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Avaliação</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -435,22 +458,22 @@ const LandingPage = () => {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)] text-sm font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold uppercase tracking-wider">
                 <Receipt className="w-4 h-4" />
                 Documentos
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                Gestão de documentos em segundos
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                Criação de documentos em segundos
               </h2>
               <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-                O coração do Biz-flow é a agilidade. Crie documentos comerciais profissionais sem complicação.
+                Emita facturas, recibos e orçamentos com aspecto profissional. Personalize com o seu logótipo, NUIT e assinatura digital.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Emissão de Facturas, Recibos e Orçamentos',
-                  'Personalização completa com Logo e NUIT',
-                  'Assinatura Digital directamente na tela',
-                  'Exportação instantânea para PDF A4',
+                  'Facturas, Recibos, Factura-Recibo e Orçamentos',
+                  'Personalização com Logo e NUIT da empresa',
+                  'Assinatura Digital directamente no ecrã',
+                  'Exportação para PDF formato A4',
                   'Conversão de Orçamento em Factura com 1 clique'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
@@ -459,6 +482,14 @@ const LandingPage = () => {
                   </li>
                 ))}
               </ul>
+              <TrackedLink
+                href="/testar"
+                className="btn-primary"
+                eventName="cta_click"
+                metadata={{ location: 'product_showcase' }}
+              >
+                Testar Editor Grátis <ArrowRight className="w-4 h-4" />
+              </TrackedLink>
             </motion.div>
 
             <motion.div
@@ -468,14 +499,67 @@ const LandingPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--color-accent)]/10 to-transparent rounded-[32px] blur-2xl" />
-              <div className="relative bg-[var(--color-surface-alt)] rounded-3xl p-8 border border-[var(--color-border)] shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-alt)] rounded-2xl flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 rounded-2xl bg-[var(--color-accent-soft)] flex items-center justify-center mx-auto">
-                      <FileText className="w-8 h-8 text-[var(--color-accent)]" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/10 to-transparent rounded-[32px] blur-2xl" />
+              <div className="relative bg-white rounded-3xl p-6 border border-slate-200 shadow-2xl">
+                {/* Invoice Preview */}
+                <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                  {/* Invoice Header */}
+                  <div className="flex justify-between items-start p-5 border-b border-slate-100">
+                    <div>
+                      <img src="/logo.svg" alt="Biz-flow" className="h-7 mb-2" />
+                      <p className="text-xs text-slate-400">NUIT: 123456789</p>
                     </div>
-                    <p className="text-[var(--color-muted)] font-medium">Pré-visualização da Factura</p>
+                    <div className="text-right">
+                      <p className="text-lg font-bold text-slate-800">FACTURA</p>
+                      <p className="text-xs text-slate-400">Nº FAT-0001</p>
+                      <p className="text-xs text-slate-400">10 Julho 2026</p>
+                    </div>
+                  </div>
+                  {/* Client */}
+                  <div className="px-5 py-3 border-b border-slate-100 bg-slate-50/50">
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Cliente</p>
+                    <p className="text-sm font-medium">Maria Silva, Lda</p>
+                  </div>
+                  {/* Items */}
+                  <div className="px-5 py-3">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="text-slate-400 border-b border-slate-100">
+                          <th className="text-left py-1.5 font-medium">Descrição</th>
+                          <th className="text-right py-1.5 font-medium w-12">Qtd</th>
+                          <th className="text-right py-1.5 font-medium w-20">Preço</th>
+                          <th className="text-right py-1.5 font-medium w-20">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-slate-50">
+                          <td className="py-2 text-slate-700">Consultoria de Marketing Digital</td>
+                          <td className="text-right py-2 text-slate-600">1</td>
+                          <td className="text-right py-2 text-slate-600">15.000 MT</td>
+                          <td className="text-right py-2 font-medium">15.000 MT</td>
+                        </tr>
+                        <tr className="border-b border-slate-50">
+                          <td className="py-2 text-slate-700">Design de Website</td>
+                          <td className="text-right py-2 text-slate-600">1</td>
+                          <td className="text-right py-2 text-slate-600">25.000 MT</td>
+                          <td className="text-right py-2 font-medium">25.000 MT</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  {/* Totals */}
+                  <div className="px-5 py-3 border-t border-slate-100 bg-slate-50/50">
+                    <div className="space-y-1 text-right text-xs">
+                      <p className="text-slate-500">Subtotal: <span className="font-medium text-slate-700">40.000 MT</span></p>
+                      <p className="text-slate-500">IVA (16%): <span className="font-medium text-slate-700">6.400 MT</span></p>
+                      <p className="text-base font-bold text-blue-600">Total: 46.400 MT</p>
+                    </div>
+                  </div>
+                  {/* Stamp */}
+                  <div className="flex justify-end px-5 pb-4">
+                    <div className="text-center border-2 border-green-500 text-green-600 text-[10px] font-bold uppercase rounded-lg px-4 py-1 rotate-[-5deg] opacity-70">
+                      PAGO
+                    </div>
                   </div>
                 </div>
               </div>
@@ -495,14 +579,69 @@ const LandingPage = () => {
               transition={{ duration: 0.6 }}
               className="relative order-2 lg:order-1"
             >
-              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent rounded-[32px] blur-2xl" />
-              <div className="relative bg-[var(--color-surface-alt)] rounded-3xl p-8 border border-[var(--color-border)] shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-alt)] rounded-2xl flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center mx-auto">
-                      <BarChart3 className="w-8 h-8 text-[var(--color-primary)]" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/10 via-blue-500/10 to-transparent rounded-[32px] blur-2xl" />
+              <div className="relative bg-white rounded-3xl p-6 border border-slate-200 shadow-2xl">
+                {/* Mini Dashboard */}
+                <div className="space-y-4">
+                  {/* Summary cards */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                      <p className="text-[10px] text-emerald-600 uppercase tracking-wider font-medium">Entradas</p>
+                      <p className="text-xl font-bold text-emerald-700" style={{ fontFamily: 'var(--font-mono)' }}>185.400 MT</p>
+                      <p className="text-[10px] text-emerald-500">+12% este mês</p>
                     </div>
-                    <p className="text-[var(--color-muted)] font-medium">Dashboard Financeiro</p>
+                    <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                      <p className="text-[10px] text-red-600 uppercase tracking-wider font-medium">Saídas</p>
+                      <p className="text-xl font-bold text-red-700" style={{ fontFamily: 'var(--font-mono)' }}>92.150 MT</p>
+                      <p className="text-[10px] text-red-500">+8% este mês</p>
+                    </div>
+                  </div>
+
+                  {/* Pie Chart SVG */}
+                  <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <p className="text-xs font-medium text-slate-600 mb-3">Despesas por Categoria</p>
+                    <div className="flex items-center gap-6">
+                      <svg viewBox="0 0 36 36" className="w-28 h-28">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e2e8f0" strokeWidth="2" />
+                        <path d="M18 2.1 a15.9 15.9 0 0 1 13.8 7.8" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M31.8 9.9 a15.9 15.9 0 0 1 2.1 11.4" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M33.9 21.3 a15.9 15.9 0 0 1 -8.1 11.4" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M25.8 32.7 a15.9 15.9 0 0 1 -15.6 0" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M10.2 32.7 a15.9 15.9 0 0 1 -8.1 -11.4" fill="none" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round" />
+                      </svg>
+                      <div className="space-y-1.5 flex-1">
+                        {[
+                          { label: 'Operacional', color: '#3b82f6', value: '35%' },
+                          { label: 'Insumos', color: '#f59e0b', value: '25%' },
+                          { label: 'Logística', color: '#10b981', value: '20%' },
+                          { label: 'Salários', color: '#ef4444', value: '12%' },
+                          { label: 'Outros', color: '#8b5cf6', value: '8%' },
+                        ].map(item => (
+                          <div key={item.label} className="flex items-center justify-between text-xs">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
+                              <span className="text-slate-600">{item.label}</span>
+                            </div>
+                            <span className="font-medium text-slate-800">{item.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Monthly bar */}
+                  <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <p className="text-xs font-medium text-slate-600 mb-3">Fluxo Mensal</p>
+                    <div className="flex items-end gap-2 h-24">
+                      {['Jan','Fev','Mar','Abr','Mai','Jun'].map((m, i) => (
+                        <div key={m} className="flex-1 flex flex-col items-center gap-1">
+                          <div className="w-full bg-blue-100 rounded-t relative" style={{ height: `${40 + Math.random() * 40}%` }}>
+                            <div className="absolute bottom-0 w-full bg-blue-500 rounded-t transition-all hover:bg-blue-600" style={{ height: `${60 + Math.random() * 30}%` }} />
+                          </div>
+                          <span className="text-[10px] text-slate-400">{m}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -515,23 +654,23 @@ const LandingPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8 order-1 lg:order-2"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-semibold uppercase tracking-wider">
-                <Wallet className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold uppercase tracking-wider">
+                <BarChart3 className="w-4 h-4" />
                 Finanças
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                Controle financeiro total
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                Dashboard financeiro completo
               </h2>
               <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-                Saiba exactamente para onde o seu dinheiro está a ir com o nosso módulo de fluxo de caixa.
+                Tenha uma visão clara das suas receitas e despesas com relatórios detalhados e gráficos interactivos.
               </p>
               <ul className="space-y-4">
                 {[
-                  'Registo detalhado de Receitas e Despesas',
-                  'Categorização inteligente de gastos',
-                  'Dashboard com estatísticas mensais',
-                  'Histórico completo de transações',
-                  'Alertas de pagamentos pendentes'
+                  'Receitas e Despesas organizadas por categoria',
+                  'Gráfico de despesas com análise percentual',
+                  'Fluxo de caixa mensal com projecções',
+                  'Relatórios exportáveis para análise',
+                  'Alertas de contas a pagar e receber'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[var(--color-success)] flex-shrink-0" />
@@ -539,6 +678,14 @@ const LandingPage = () => {
                   </li>
                 ))}
               </ul>
+              <TrackedLink
+                href="/testar"
+                className="btn-primary"
+                eventName="cta_click"
+                metadata={{ location: 'finance_section' }}
+              >
+                Experimentar Agora <ArrowRight className="w-4 h-4" />
+              </TrackedLink>
             </motion.div>
           </div>
         </div>
@@ -880,6 +1027,7 @@ export default function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/testar" element={<DemoEditor />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
