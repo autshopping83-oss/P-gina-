@@ -85,7 +85,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10">
           <NavLink href="/funcionalidades">Funcionalidades</NavLink>
           <NavLink href="/precos">Preços</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
+          <a href="https://blog.biz-flow.cloud" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">Blog</a>
           <NavLink href="/sobre">Sobre</NavLink>
           <NavLink href="/contato">Contato</NavLink>
           <NavLink href="/testar">Testar Grátis</NavLink>
@@ -128,7 +128,7 @@ const Navbar = () => {
             <div className="container py-6 flex flex-col gap-4">
               <MobileNavLink href="/funcionalidades" onClick={() => setMobileMenuOpen(false)}>Funcionalidades</MobileNavLink>
               <MobileNavLink href="/precos" onClick={() => setMobileMenuOpen(false)}>Preços</MobileNavLink>
-              <MobileNavLink href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</MobileNavLink>
+              <a href="https://blog.biz-flow.cloud" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors py-2">Blog</a>
               <MobileNavLink href="/sobre" onClick={() => setMobileMenuOpen(false)}>Sobre</MobileNavLink>
               <MobileNavLink href="/contato" onClick={() => setMobileMenuOpen(false)}>Contato</MobileNavLink>
               <MobileNavLink href="/testar" onClick={() => setMobileMenuOpen(false)}>Testar Grátis</MobileNavLink>
@@ -974,7 +974,7 @@ const LandingPage = () => {
               <ul className="space-y-4 text-white/50 text-sm">
                 <li><Link to="/funcionalidades" className="hover:text-[var(--color-accent)] transition-colors">Funcionalidades</Link></li>
                 <li><Link to="/precos" className="hover:text-[var(--color-accent)] transition-colors">Preços</Link></li>
-                <li><Link to="/blog" className="hover:text-[var(--color-accent)] transition-colors">Blog</Link></li>
+                <li><a href="https://blog.biz-flow.cloud" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">Blog</a></li>
                 <li><Link to="/sobre" className="hover:text-[var(--color-accent)] transition-colors">Sobre</Link></li>
               </ul>
             </div>
